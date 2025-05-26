@@ -19,11 +19,11 @@
         #heygen-streaming-embed {\n    
         z-index: 9999;\n    
         position: fixed;\n    
-        left: 40px;\n    
-        bottom: 40px;\n    
-        width: 200px;\n   
-        height: 200px;\n    
-        border-radius: 50%;\n    
+        left: 35%;\n    
+        bottom: 40%;\n   
+        width: 35%;\n    
+        height: 30%;\n    
+        border-radius: 80px;\n    
         border: 2px solid #fff;\n    
         box-shadow: 0px 8px 24px 0px rgba(0, 0, 0, 0.12);\n    
         transition: all linear 0.1s;\n    
@@ -31,43 +31,37 @@
         opacity: 0;\n    
         visibility: hidden;\n  
         }\n  
-        
-        #heygen-streaming-embed.show {\n   
+
+        #heygen-streaming-embed.show {\n    
         opacity: 1;\n    
         visibility: visible;\n  
-        }\n  
-        
+        }\n 
+
         #heygen-streaming-embed.expand {\n    
-        ${clientWidth<540?"height: 266px; width: 96%; left: 50%; transform: translateX(-50%);":"height: 366px; width: calc(366px * 16 / 9);"
-        }\n    
-        
-        border: 0;\n    
+        ${clientWidth<540?"height: 50%; width: 96%; left: 50%; transform: translateX(-50%);":"height: 65%; width: calc(35% * 16 / 9);"}\n    
+        border: 0;\n   
         border-radius: 8px;\n  
         }\n  
-        
+
         #heygen-streaming-container {\n    
         width: 100%;\n    
         height: 100%;\n  
         }\n  
         
-        #heygen-streaming-container iframe {\n    
+        #heygen-streaming-container iframe {\n   
         width: 100%;\n    
         height: 100%;\n    
-        border: 0;\n  
-        }\n  `;
+        border: 0;\n  }\n  `;
         const iframe=document.createElement("iframe");
-        iframe.allowFullscreen=!1,
-        iframe.title="Streaming Embed",
-        iframe.role="dialog",
-        iframe.allow="microphone",
-        iframe.src=url;
-        let visible=!1,
-        initial=!1;
-        window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,wrapDiv.classList.toggle("expand",visible)))})),
-        container.appendChild(iframe),
-        wrapDiv.appendChild(stylesheet),
-        wrapDiv.appendChild(container),
-        document.body.appendChild(wrapDiv)}
-        (globalThis);</script>
+        iframe.allowFullscreen=!1,iframe.title="Streaming Embed",
+        iframe.role="dialog",iframe.allow="microphone",
+        iframe.src=url;let visible=!1,initial=!1;
+        window.addEventListener("message",(e=>{e.origin===host&&e.data&&e.data.type&&"streaming-embed"===e.data.type&&("init"===e.data.action?(initial=!0,wrapDiv.classList.toggle("show",initial)):"show"===e.data.action?(visible=!0,
+        wrapDiv.classList.toggle("expand",visible)):"hide"===e.data.action&&(visible=!1,
+        wrapDiv.classList.toggle("expand",visible)))})),container.appendChild(iframe),
+        wrapDiv.appendChild(stylesheet),wrapDiv.appendChild(container),document.body.appendChild(wrapDiv)
+    }(globalThis);
+
+    </script>
 </body>
 </html>
